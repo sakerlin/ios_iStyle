@@ -36,17 +36,33 @@
     [super viewDidLoad];
      // Do any additional setup after loading the view from its nib.
      _collages = [Collage collages];
+    /*
     UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Share"
                                                                     style:UIBarButtonItemStyleDone
                                                                     target:nil
                                                                    action:@selector(saveCollage)];
+    */
+    UIImage *shareimg = [UIImage imageNamed:@"share"];
+    UIButton *sharebtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    sharebtn.bounds = CGRectMake( 10, 0, 36, 36);
+    [sharebtn setImage:shareimg forState:UIControlStateNormal];
+    [sharebtn addTarget:self action:@selector(shareCollage) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithCustomView:sharebtn];
+    
+    
+    UIImage *saveimg = [UIImage imageNamed:@"save"];
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.bounds = CGRectMake( 10, 0, 36, 36);
+    [btn setImage:saveimg forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(doSave) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *savebtn = [[UIBarButtonItem alloc] initWithCustomView:btn];
+   
     UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithTitle:@"Fav"
                                                                    style:UIBarButtonItemStyleDone
                                                                   target:nil
                                                                   action:@selector(showFav)];
     UINavigationItem *item = [[UINavigationItem alloc] initWithTitle:@"iStyle"];
-    
-    item.rightBarButtonItem = rightButton;
+    item.rightBarButtonItems = [NSArray arrayWithObjects:savebtn,rightButton, nil];
     item.leftBarButtonItem = leftButton;
     item.hidesBackButton = YES;
     [self.navBar pushNavigationItem:item animated:NO];
@@ -185,11 +201,21 @@
    
     [self presentViewController:Rvc animated:YES completion:nil];
 }
-- (void)saveCollage{
+- (void)shareCollage {
+    if([self saveCollage]){
+        [self shareContent];
+    }
+}
+- (void)doSave{
+    if([self saveCollage]){
+         [SVProgressHUD showSuccessWithStatus: @"Collage save success!"];
+    }
+}
+- (BOOL)saveCollage{
     NSArray *images = [[self.collageView.subviews valueForKey:@"image"] filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
         return [evaluatedObject isKindOfClass:[UIImage class]];
     }]];
-    NSLog(@"count=%lu", [self.collage.relativeFrames count]);
+    [SVProgressHUD setBackgroundColor:[UIColor colorWithRed:1.0f green:1.0f blue:1.0f alpha:1.0]];
     if( [self.collage.relativeFrames count] == [images count]){
         UIImage *snap = [self.collageView renderImage];
         NSData *imgData = UIImagePNGRepresentation(snap);
@@ -200,12 +226,17 @@
             self.lastsanp = newImageName;
             [imgData writeToFile:newImageName atomically:YES];
             NSLog(@"write success");
-            [self shareContent];
+           
+            return YES;
+            
         }else{
             NSLog(@"error while taking screenshot");
+            [SVProgressHUD showErrorWithStatus: @"Collage save fail!"];
+            return NO;
         }
     } else {
        [SVProgressHUD showErrorWithStatus: @"Please fill all images!"];
+        return NO;
     }
  
 }
@@ -221,8 +252,6 @@
     
     // Remove the filename and create the remaining path
     [fileManager createDirectoryAtPath:[finalPath stringByDeletingLastPathComponent] withIntermediateDirectories:YES attributes:nil error:nil];
-    
-    NSLog(@"path=%@",finalPath);
     
     return finalPath;
     
