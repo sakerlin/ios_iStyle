@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -10,7 +10,6 @@
                 <outlet property="collectionView" destination="9rN-MV-uwv" id="Xbm-qU-9d5"/>
                 <outlet property="hatBarItem" destination="OVw-xm-1dr" id="0Ty-gV-U8r"/>
                 <outlet property="maskView" destination="kqh-RG-jVP" id="Nmx-6C-MYA"/>
-                <outlet property="rightButton" destination="eRo-cm-7jF" id="hgP-gG-z7n"/>
                 <outlet property="searchBar" destination="JaR-K8-qM5" id="bit-v3-9Yl"/>
                 <outlet property="searchDisplayController" destination="eFY-FG-k52" id="NmK-9w-c78"/>
                 <outlet property="shoesBarItem" destination="c8P-Ha-Alp" id="1gh-uE-lPT"/>
@@ -38,35 +37,33 @@
                     <rect key="frame" x="0.0" y="16" width="320" height="44"/>
                     <subviews>
                         <searchBar contentMode="redraw" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="JaR-K8-qM5">
-                            <rect key="frame" x="0.0" y="0.0" width="278" height="44"/>
+                            <rect key="frame" x="41" y="0.0" width="279" height="44"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="YVS-7W-blr"/>
                             </constraints>
                             <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
-                        <button opaque="NO" tag="1" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eRo-cm-7jF">
-                            <rect key="frame" x="282" y="8" width="30" height="28"/>
-                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <color key="tintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <state key="normal" title="OK">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TTs-gU-wuJ">
+                            <rect key="frame" x="6" y="6" width="35" height="30"/>
+                            <state key="normal" title="Back">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
-                                <action selector="onRightButton:" destination="-1" eventType="touchUpInside" id="nh1-XL-4zy"/>
+                                <action selector="onBack:" destination="-1" eventType="touchUpInside" id="W5V-fj-kxR"/>
                             </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="eRo-cm-7jF" secondAttribute="trailing" constant="8" id="1To-1e-UKw"/>
+                        <constraint firstItem="TTs-gU-wuJ" firstAttribute="top" secondItem="03J-5O-MWc" secondAttribute="top" constant="6" id="1MX-vA-nuz"/>
+                        <constraint firstAttribute="bottom" secondItem="TTs-gU-wuJ" secondAttribute="bottom" constant="8" id="3AV-tz-mx5"/>
+                        <constraint firstAttribute="trailing" secondItem="JaR-K8-qM5" secondAttribute="trailing" id="Pzf-bo-lvh"/>
                         <constraint firstItem="JaR-K8-qM5" firstAttribute="top" secondItem="03J-5O-MWc" secondAttribute="top" id="aeM-83-wNf"/>
-                        <constraint firstItem="eRo-cm-7jF" firstAttribute="top" secondItem="03J-5O-MWc" secondAttribute="top" constant="8" id="fsp-4A-qUx"/>
-                        <constraint firstItem="JaR-K8-qM5" firstAttribute="leading" secondItem="03J-5O-MWc" secondAttribute="leading" id="lS0-Bi-Lqb"/>
-                        <constraint firstItem="eRo-cm-7jF" firstAttribute="leading" secondItem="JaR-K8-qM5" secondAttribute="trailing" constant="4" id="nUT-zW-r3i"/>
+                        <constraint firstItem="JaR-K8-qM5" firstAttribute="leading" secondItem="TTs-gU-wuJ" secondAttribute="trailing" id="akY-Zi-nUl"/>
+                        <constraint firstAttribute="bottom" secondItem="JaR-K8-qM5" secondAttribute="bottom" id="isQ-ZJ-hbv"/>
+                        <constraint firstItem="TTs-gU-wuJ" firstAttribute="leading" secondItem="03J-5O-MWc" secondAttribute="leading" constant="6" id="pdb-iY-Jc8"/>
                         <constraint firstAttribute="height" constant="44" id="sOH-fA-2SJ"/>
-                        <constraint firstAttribute="bottom" secondItem="eRo-cm-7jF" secondAttribute="bottom" constant="8" id="sW8-Nm-Zv6"/>
                     </constraints>
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="9rN-MV-uwv">
@@ -82,9 +79,6 @@
                 <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o8A-fN-Zgd">
                     <rect key="frame" x="0.0" y="519" width="320" height="49"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="49" id="5ad-lT-niK"/>
-                    </constraints>
                     <items>
                         <tabBarItem title="Top" image="top24" id="LuP-fP-gwR"/>
                         <tabBarItem title="Bottom" image="bottom24" id="0F7-Ui-gl6"/>
@@ -93,7 +87,7 @@
                     </items>
                     <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                 </tabBar>
-                <view alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kqh-RG-jVP" userLabel="MaskView">
+                <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kqh-RG-jVP" userLabel="MaskView">
                     <rect key="frame" x="0.0" y="60" width="320" height="459"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                     <connections>
@@ -105,16 +99,20 @@
             <gestureRecognizers/>
             <constraints>
                 <constraint firstItem="PBV-sf-cqk" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="0j7-2c-7TA"/>
+                <constraint firstItem="kqh-RG-jVP" firstAttribute="top" secondItem="03J-5O-MWc" secondAttribute="bottom" id="3W4-qc-JlX"/>
+                <constraint firstAttribute="trailing" secondItem="kqh-RG-jVP" secondAttribute="trailing" id="7T8-tA-clD"/>
                 <constraint firstItem="9rN-MV-uwv" firstAttribute="top" secondItem="03J-5O-MWc" secondAttribute="bottom" id="F9A-Es-ZNc"/>
                 <constraint firstAttribute="bottom" secondItem="9rN-MV-uwv" secondAttribute="bottom" id="HqP-tn-hhM"/>
                 <constraint firstAttribute="trailing" secondItem="o8A-fN-Zgd" secondAttribute="trailing" id="Mgg-hM-JgE"/>
                 <constraint firstItem="03J-5O-MWc" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="N5c-i4-cht"/>
                 <constraint firstAttribute="bottom" secondItem="o8A-fN-Zgd" secondAttribute="bottom" id="Pgv-e1-CP0"/>
                 <constraint firstAttribute="trailing" secondItem="03J-5O-MWc" secondAttribute="trailing" id="Svp-gX-E5C"/>
+                <constraint firstItem="kqh-RG-jVP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="VWr-YS-c2K"/>
                 <constraint firstAttribute="trailing" secondItem="9rN-MV-uwv" secondAttribute="trailing" id="fVX-le-Ycx"/>
                 <constraint firstItem="9rN-MV-uwv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hTD-wl-iFy"/>
                 <constraint firstItem="PBV-sf-cqk" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="k3t-hB-5Yc"/>
                 <constraint firstItem="03J-5O-MWc" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="16" id="koH-f1-xUJ"/>
+                <constraint firstItem="o8A-fN-Zgd" firstAttribute="top" secondItem="kqh-RG-jVP" secondAttribute="bottom" id="pIT-uZ-mdT"/>
                 <constraint firstAttribute="trailing" secondItem="PBV-sf-cqk" secondAttribute="trailing" id="qAo-rX-Xbf"/>
                 <constraint firstItem="o8A-fN-Zgd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="r7c-xa-bJk"/>
             </constraints>

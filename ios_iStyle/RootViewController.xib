@@ -26,9 +26,13 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="s2R-u3-43E"/>
                     </constraints>
+                    <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <textAttributes key="titleTextAttributes">
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </textAttributes>
                     <items>
-                        <navigationItem title="Title" id="zOq-OV-UqO">
-                            <barButtonItem key="rightBarButtonItem" title="back" id="74C-Xs-Dwg">
+                        <navigationItem title="Favorite" id="zOq-OV-UqO">
+                            <barButtonItem key="leftBarButtonItem" title="Back" id="74C-Xs-Dwg">
                                 <connections>
                                     <action selector="dismiss:" destination="-1" id="dKK-Nq-vzp"/>
                                 </connections>
