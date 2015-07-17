@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>A19E3D26-C9E0-4CAB-9F31-E973A110AB8E</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ios_iStyle</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>B7561E467FD76E5F1FA019BD55226F70E38534F6</key>
+		<string>https://github.com/sakerlin/ios_iStyle.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ios_iStyle.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>B7561E467FD76E5F1FA019BD55226F70E38534F6</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/sakerlin/ios_iStyle.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>B7561E467FD76E5F1FA019BD55226F70E38534F6</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>B7561E467FD76E5F1FA019BD55226F70E38534F6</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ios_iStyle</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -25,13 +25,9 @@
 #define SEARCH_INTERFACE_YQL 1
 #define SEARCH_INTERFACE_API 2
 
-#define RIGHT_BUTTON_OK 1;
-#define RIGHT_BUTTON_CANCEL 2;
-
 @interface SearchViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UITabBarDelegate>
 
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
-@property (weak, nonatomic) IBOutlet UIButton *rightButton;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet UITabBarItem *topBarItem;
 @property (weak, nonatomic) IBOutlet UITabBarItem *bottomBarItem;
@@ -85,21 +81,18 @@
     }];
 }
 
-- (IBAction)onRightButton:(UIButton *)sender {
-    
-    if (sender.tag == 2) {
-        [self onCancel];
-    }
-    else if (sender.tag == 1) {
-        [self.delegate getSelectedRecord:self.records[self.selectedIndexPath.row]];
-        [self dismissViewControllerAnimated:YES completion:nil];
-    }
+- (IBAction)onBack:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)aSearchBar
+{
+    [self onCancel];
 }
 
 - (void)onCancel {
     self.maskView.hidden = YES;
     [self.searchBar resignFirstResponder];
-    [self setRightButtonToOK];
 }
 
 - (void)resetDataWithSearchText:(NSString *)searchText {
@@ -107,7 +100,6 @@
     [self.searchText setString:searchText];
     self.selectedIndexPath = nil;
     self.searchBar.text = searchText;
-    self.rightButton.enabled = NO;
     [self.records removeAllObjects];
     [self.searchBar resignFirstResponder];
 }
@@ -125,20 +117,6 @@
 
 - (IBAction)onTap:(UITapGestureRecognizer *)sender {
     [self onCancel];
-}
-
-- (void)setRightButtonToOK {
-    [self.rightButton setTintColor:[UIColor orangeColor]];
-    [self.rightButton setTitle:@"OK" forState:UIControlStateNormal];
-    self.rightButton.tag = RIGHT_BUTTON_OK;
-    self.rightButton.enabled = self.selectedIndexPath ? YES : NO;
-}
-
-- (void)setRightButtonToCancel {
-    [self.rightButton setTintColor:[UIColor colorWithRed:0.0 green:122/255.0f blue:1.0 alpha:1.0]];
-    [self.rightButton setTitle:@"Cancel" forState:UIControlStateNormal];
-    self.rightButton.tag = RIGHT_BUTTON_CANCEL;
-    self.rightButton.enabled = YES;
 }
 
 - (void)didSearch {
@@ -220,8 +198,6 @@
 - (void)setSelectedCellBorder:(ImageCell *)cell {
     cell.layer.borderWidth = 3.0f;
     cell.layer.borderColor = [UIColor orangeColor].CGColor;
-    
-    self.rightButton.enabled = YES;
 }
 
 - (void)unsetSelectedCellBorder:(ImageCell *)cell {
@@ -256,7 +232,7 @@
 
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
     self.maskView.hidden = NO;
-    [self setRightButtonToCancel];
+    self.searchBar.showsCancelButton = YES;
 }
 
 -(void)searchBar:(UISearchBar*)searchBar textDidChange:(NSString*)text
@@ -270,7 +246,7 @@
     [self didSearch];
     [self.searchBar resignFirstResponder];
     self.maskView.hidden = YES;
-    [self setRightButtonToOK];
+    self.searchBar.showsCancelButton = NO;
 }
 
 - (void)searchWithCluster:(NSArray *)keywords clusterName:(NSString *)clusterName offset:(NSInteger)offset limit:(NSInteger)limit {
