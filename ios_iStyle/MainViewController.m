@@ -79,20 +79,18 @@
     item.hidesBackButton = YES;
     [self.navBar pushNavigationItem:item animated:NO];
     
+    CGRect bottomViewBound = [[UIScreen mainScreen] bounds];
+    CGSize bottomSize = bottomViewBound.size;
+    CGFloat bWidth = bottomSize.width;
+    //CGFloat bHeight = bottomSize.height;
+    
     for (unsigned long i = 0; i < self.collages.count;  i++) {
-        CGRect bottomViewBound = [self.bottomView bounds];
-        CGSize bottomSize = bottomViewBound.size;
-        CGFloat bWidth = bottomSize.width;
-        CGFloat bHeight = bottomSize.height;
-        NSLog(@"width=%f,height=%f",bWidth,bHeight);
-        CGFloat gap = (bWidth - 80*self.collages.count )/5.0;
-        NSLog(@"gap=%f",gap);
-        CGFloat x = (i*(80+gap)) + gap;
-
+        CGFloat gap = (bWidth - 60*4.0)/5.0;
+        CGFloat x = ((i*60)+gap) + i*gap ;
         UIImageView  *result = [[UIImageView alloc] initWithFrame:CGRectMake(x,
-                                                                             10.0,
-                                                                             80.0,
-                                                                             80.0)];
+                                                                             20.0,
+                                                                             60.0,
+                                                                             60.0)];
         
         result.image = [UIImage renderPreviewImageWithCollage:self.collages[i] ofSize:result.frame.size];
         result.tag = i;
