@@ -29,6 +29,10 @@
 @end
 
 @implementation MainViewController
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
+}
 -(void)viewWillAppear:(BOOL)animated{
      self.collageView.center = CGPointMake(self.centerView.frame.size.width / 2., self.centerView.frame.size.height / 2.);
 }
@@ -42,25 +46,33 @@
                                                                     target:nil
                                                                    action:@selector(saveCollage)];
     */
-    UIImage *shareimg = [UIImage imageNamed:@"share"];
+    UIImage *shareimg = [UIImage imageNamed:@"share-48"];
     UIButton *sharebtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    sharebtn.bounds = CGRectMake( 10, 0, 36, 36);
+    sharebtn.bounds = CGRectMake( 10, 0, 32, 32);
     [sharebtn setImage:shareimg forState:UIControlStateNormal];
     [sharebtn addTarget:self action:@selector(shareCollage) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithCustomView:sharebtn];
     
     
-    UIImage *saveimg = [UIImage imageNamed:@"save"];
+    UIImage *saveimg = [UIImage imageNamed:@"save-48"];
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn.bounds = CGRectMake( 10, 0, 36, 36);
+    btn.bounds = CGRectMake( 10, 0, 32, 32);
     [btn setImage:saveimg forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(doSave) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *savebtn = [[UIBarButtonItem alloc] initWithCustomView:btn];
    
-    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithTitle:@"Fav"
+    UIImage *homeimg = [UIImage imageNamed:@"home-48"];
+    UIButton *hbtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    hbtn.bounds = CGRectMake( 10, 0, 32, 32);
+    [hbtn setImage:homeimg forState:UIControlStateNormal];
+    [hbtn addTarget:self action:@selector(showFav) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithCustomView:hbtn];
+    /*
+    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithTitle:@"home-48"
                                                                    style:UIBarButtonItemStyleDone
                                                                   target:nil
                                                                   action:@selector(showFav)];
+     */
     UINavigationItem *item = [[UINavigationItem alloc] initWithTitle:@"iStyle"];
     item.rightBarButtonItems = [NSArray arrayWithObjects:savebtn,rightButton, nil];
     item.leftBarButtonItem = leftButton;
