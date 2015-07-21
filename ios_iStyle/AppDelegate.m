@@ -21,6 +21,9 @@
     self.viewController = [[MainViewController alloc] initWithNibName:@"MainViewController" bundle:nil];
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
+   // [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
+    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
     return YES;
 }
 

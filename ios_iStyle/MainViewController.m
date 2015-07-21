@@ -29,10 +29,12 @@
 @end
 
 @implementation MainViewController
+/*
 - (BOOL)prefersStatusBarHidden
 {
     return YES;
 }
+ */
 -(void)viewWillAppear:(BOOL)animated{
      self.collageView.center = CGPointMake(self.centerView.frame.size.width / 2., self.centerView.frame.size.height / 2.);
 }
