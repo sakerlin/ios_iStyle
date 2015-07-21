@@ -7,12 +7,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RootViewController">
             <connections>
                 <outlet property="backBtnItem" destination="74C-Xs-Dwg" id="dV2-kh-baA"/>
-                <outlet property="circleBarItem" destination="SfN-kX-42h" id="Wtz-JW-2fv"/>
                 <outlet property="collectionView" destination="TID-gP-EIp" id="0k0-1b-egI"/>
-                <outlet property="lineBarItem" destination="qQT-49-J6R" id="Yh6-e6-O81"/>
                 <outlet property="naviBar" destination="vAy-sf-FHu" id="Bt7-37-y2T"/>
-                <outlet property="stackBarItem" destination="cLF-jR-pdU" id="vZg-yb-BcJ"/>
-                <outlet property="tabBar" destination="TGG-of-RAw" id="Pgp-Z2-IEM"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -41,7 +37,7 @@
                     </items>
                 </navigationBar>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="TID-gP-EIp">
-                    <rect key="frame" x="0.0" y="60" width="414" height="627"/>
+                    <rect key="frame" x="0.0" y="60" width="414" height="676"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9cC-I7-tS1">
                         <size key="itemSize" width="50" height="50"/>
@@ -50,30 +46,14 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
-                <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TGG-of-RAw">
-                    <rect key="frame" x="0.0" y="687" width="414" height="49"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <items>
-                        <tabBarItem selectedImage="ImageSelectedOn.png" systemItem="favorites" id="qQT-49-J6R"/>
-                        <tabBarItem systemItem="more" id="SfN-kX-42h"/>
-                        <tabBarItem systemItem="history" id="cLF-jR-pdU"/>
-                    </items>
-                </tabBar>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="vAy-sf-FHu" secondAttribute="trailing" id="6Nv-xL-uRv"/>
                 <constraint firstItem="vAy-sf-FHu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="L7Z-zm-af4"/>
-                <constraint firstAttribute="bottom" secondItem="TGG-of-RAw" secondAttribute="bottom" id="Nhi-Ce-Dy9"/>
-                <constraint firstAttribute="bottom" secondItem="TGG-of-RAw" secondAttribute="bottom" id="WA0-wA-zZu"/>
-                <constraint firstAttribute="trailing" secondItem="TGG-of-RAw" secondAttribute="trailing" id="lug-6T-CJW"/>
                 <constraint firstItem="vAy-sf-FHu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="rKz-AL-9c4"/>
-                <constraint firstItem="TGG-of-RAw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="yj4-33-XvR"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
         </view>
     </objects>
-    <resources>
-        <image name="ImageSelectedOn.png" width="44" height="44"/>
-    </resources>
 </document>
