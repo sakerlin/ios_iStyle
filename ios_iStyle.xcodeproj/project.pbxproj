@@ -32,8 +32,6 @@
 		29AB0D921B57ED4A00096811 /* SXImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AB0D901B57ED4A00096811 /* SXImageCell.m */; };
 		29AB0D931B57ED4A00096811 /* SXImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29AB0D911B57ED4A00096811 /* SXImageCell.xib */; };
 		29C868DE1B56924900A3F0A9 /* UIView+ImageRender.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C868DD1B56924900A3F0A9 /* UIView+ImageRender.m */; };
-		6E4F1D861B5E627700114243 /* iStyle.gif in Resources */ = {isa = PBXBuildFile; fileRef = 6E4F1D851B5E627700114243 /* iStyle.gif */; };
-		6E4F1D881B5E638800114243 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 6E4F1D871B5E638800114243 /* README.md */; };
 		C80AACC8EA8FBFCA0D615495 /* libPods-ios_iStyle.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B7EF99AA41445952EB640269 /* libPods-ios_iStyle.a */; };
 /* End PBXBuildFile section */
 
@@ -93,8 +91,6 @@
 		29AB0D911B57ED4A00096811 /* SXImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SXImageCell.xib; sourceTree = "<group>"; };
 		29C868DC1B56924900A3F0A9 /* UIView+ImageRender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ImageRender.h"; sourceTree = "<group>"; };
 		29C868DD1B56924900A3F0A9 /* UIView+ImageRender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ImageRender.m"; sourceTree = "<group>"; };
-		6E4F1D851B5E627700114243 /* iStyle.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = iStyle.gif; sourceTree = "<group>"; };
-		6E4F1D871B5E638800114243 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		87A9CEB768B19EFAB2450119 /* Pods-ios_iStyle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios_iStyle.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios_iStyle/Pods-ios_iStyle.release.xcconfig"; sourceTree = "<group>"; };
 		B7EF99AA41445952EB640269 /* libPods-ios_iStyle.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ios_iStyle.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -183,8 +179,6 @@
 		297017DC1B54D6FC00CFB6A7 /* ios_iStyle */ = {
 			isa = PBXGroup;
 			children = (
-				6E4F1D871B5E638800114243 /* README.md */,
-				6E4F1D851B5E627700114243 /* iStyle.gif */,
 				290A8BAF1B57E3DA00E10FA0 /* favorite */,
 				2913D2EA1B57AF560039038C /* search */,
 				2970180D1B55140500CFB6A7 /* model */,
@@ -336,7 +330,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				297017EE1B54D6FC00CFB6A7 /* LaunchScreen.xib in Resources */,
-				6E4F1D861B5E627700114243 /* iStyle.gif in Resources */,
 				2970180C1B54DE6A00CFB6A7 /* MainViewController.xib in Resources */,
 				2913D2E81B57AF3B0039038C /* ImageCell.xib in Resources */,
 				2913D2E61B57AF3B0039038C /* SearchViewController.xib in Resources */,
@@ -405,7 +398,6 @@
 				297018101B5606B600CFB6A7 /* Collage.m in Sources */,
 				297018131B560F6D00CFB6A7 /* UIImage+CollagePreview.m in Sources */,
 				290A8BC41B57EB9C00E10FA0 /* SXStackLayout.m in Sources */,
-				6E4F1D881B5E638800114243 /* README.md in Sources */,
 				290A8BC61B57EB9C00E10FA0 /* SXCircleLayout.m in Sources */,
 				29C868DE1B56924900A3F0A9 /* UIView+ImageRender.m in Sources */,
 				2970181D1B563C3A00CFB6A7 /* UIView+RelativeFrame.m in Sources */,
